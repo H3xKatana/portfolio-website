@@ -1,0 +1,585 @@
+/* Apply styles to all elements */
+* {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Dark theme color palette */
+:root {
+    --primary-bg: #232323;
+    --secondary-bg: #333333;
+    --text-color: #ffffff;
+    --accent-color: #6e45e2;
+    --link-color: #b8b8b8;
+    --card-bg: #4f4f4f;
+    --card-shadow: rgba(0, 0, 0, 0.2);
+    --card-hover-transform: scale(1.05);
+    --title-color: #a0a0a0;  
+}
+    
+
+/* Body styles with background image */
+body {
+    background-color:var(--primary-bg)
+   
+}
+
+/* Header styles */
+nav {
+    
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+  
+    height: 100px;
+    background-color: var(--accent-color);
+    z-index: 1000; /* Ensure the navbar is above other elements */
+    transition: all 0.4s ease;
+    border-bottom: solid var(--text-color);
+    
+}
+nav .social a {
+    color: var(--text-color);
+    padding-right: 10px;
+    transition: transform 0.3s ease;
+}
+
+nav .social a:hover {
+    transform: scale(1.1);
+}
+
+.nav-items{
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 80%;
+    margin: auto;
+    
+   
+
+}
+
+nav .logo a{
+    color: var(--text-color);
+    font-size: 2em;
+    font-weight: bolder;
+  
+    text-decoration: none;
+   
+}
+.logo a:hover,
+.logo  a:active {
+    background-color: var(--accent-color);
+    transform: scale(1.1);
+}
+
+
+nav .nav-links{
+
+text-decoration: none;
+display: flex;
+justify-content: space-between;
+
+}
+.nav-links li {
+    list-style-type: none;
+    position: relative;
+    margin: 0 25px;
+    height: 100px;
+    line-height: 100px;
+}
+
+.nav-links li a{
+    color: var(--text-color);
+    text-align: center;
+    font-weight: 600;
+    text-decoration: none;
+}
+.nav-links li::after {
+    position: absolute;
+    content: " ";
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 4px;
+    background: var(--accent-color);
+    transition: 0.3s;
+}
+
+.nav-links li:hover::after,
+.liactive::after {
+    width: 100%;
+}
+.liactive:active:after{
+    width: 100%;
+}
+
+
+.contact {
+    padding: 50px;
+    background-color: var(--text-color);
+    text-align: center;
+}
+
+#contactdiv{
+  
+    border:  4px solid  var(--accent-color);
+    border-radius: 10px;
+    padding: 10px 10px;
+
+
+
+}
+.contact-form {
+    max-width: 600px;
+    margin: auto;
+    background-color: var(--secondary-bg);
+}
+
+
+.input {
+    background-color: var(--card-bg);
+    border-radius: 10px;
+    color: var(--text-color); /* Change this color to your desired text color */
+    border:none
+}
+
+.input::placeholder {
+    color: var(--text-color); /* Color for placeholder text */
+}
+.contact {
+    background-color: var(--secondary-bg);
+    min-height: 80vh;
+
+
+}
+
+
+label {
+    display: block;
+    margin: 10px 0;
+    padding: 10px;
+    color: var(--text-color);
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 20px;
+    
+    margin: 8px 0;
+    box-sizing: border-box;
+}
+
+.contact button {
+    background-color: var(--accent-color);
+    color: var(--text-color);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin: 20px;
+}
+
+.contact button:hover {
+    background-color: var(--accent-color);
+    transform: scale(1.1);
+}
+
+
+nav .social{
+
+    font-size: 1.4em;
+}
+
+
+
+    nav .button{
+    border: none;
+    padding:10px 10px;
+}
+#toggleButton {
+    /* Styles for the toggle button */
+    text-decoration: none;
+    color: var(--text-color);
+    background-color: var(--accent-color);
+    border: none;
+    font-size: 1.1em;
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+
+
+#toggleButton:hover,
+#toggleButton:active {
+    background-color: var(--accent-color);
+    transform: scale(1.1);
+}
+
+
+h1 {
+    color: var(--text-color);
+    font-size: 4rem;
+    font-family: 'Anton', sans-serif;
+    font-weight: 600;
+    font-size: 2em;
+    margin: 20px 40px;
+}
+
+.type-text {
+    position: relative;
+    color: var(--accent-color);
+    font-weight: 700;
+    font-size: 1.5em;
+    margin: 20px 40px;
+}
+
+
+
+.type-text::after {
+    content: '';
+    display: block;
+    position: absolute;
+    right: -5px;
+    top: 0;
+    height: 100%;
+    width: 2px;
+    background-color: var(--accent-color);
+    animation: type 3s infinite;
+    -webkit-animation: type 3s infinite;
+}
+
+@-webkit-keyframes type {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: .5;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes type {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: .5;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+
+
+/* Home section styles */
+.Home {
+    width: 100%;
+    min-height: 100vh;
+   
+    padding-left: 100px;
+    display: flex;
+    align-items: center;
+    background-color: var(--primary-bg);
+    background-attachment: fixed; /* Keeps the background fixed while scrolling */
+    color: var(--text-color);
+}
+
+.Home h2 {
+    font-weight: 700;
+    font-size: 2em;
+    margin: 20px 40px;
+ 
+}
+.Home .text-content {
+    max-width: 50%; /* Adjust the width as needed */
+}
+
+
+
+.image-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    height: 200px;
+    margin-right: 40vh;
+    background-color: var(--primary-bg); /* Background color for the container */
+    border: 5px solid var(--accent-color); /* Green border color */
+    border-radius: 10px; /* Border radius */
+}
+
+.fa-code {
+    color: var(--accent-color); /* Icon color */
+    font-size: 4em; /* Adjust the font size */
+}
+
+.fa-code:hover ,
+.fa-code:active{
+ 
+    transform: scale(1.4);
+}
+
+
+
+
+
+.homeinside{
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+   width: 100%;
+}
+.Home h3 {
+    margin: 20px 40px;
+    font-weight: 600;
+    font-size: 1.2em;
+}
+
+
+
+.Home button {
+    display: inline-block;
+    padding: 10px 50px;
+    margin: 20px 50px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    letter-spacing: 4px;
+    text-decoration: none;
+    background-color: var(--accent-color);
+    color: #fff;
+    border: none;
+    border-radius: 100px;
+    transition: background-color 0.3s ease, transform 0.6s ease;
+}
+
+.Home button:hover,
+.Home button:active {
+    background-color:var(--accent-color);
+    transform: scale(1.1);
+}
+
+/* Icons styles */
+.icons {
+    margin-left: 55px;
+}
+
+.icons a {
+    color: var(--text-color);
+    font-size: 1.7em;
+    padding-right: 30px;
+}
+
+/* Service Section styles */
+.title {
+    display: flex;
+    justify-content: center;
+    color: var(--title-color);
+    font-size: 2.2em;
+    font-weight: 800;
+    margin-bottom: 30px;
+}
+
+.title-skills {
+    display: flex;
+    justify-content: center;
+    background-color: var(--secondary-bg);
+    color: var(--title-color);
+    font-size: 2.2em;
+    font-weight: 800;
+    margin-bottom: 30px;
+}
+.skills{
+    min-height: 20vh;
+    background-color: var(--secondary-bg);
+   
+}
+
+
+.skills-container {
+    width: 100%;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding: 20px; /* Adjust padding as needed */
+    background-color:var(--secondary-bg); /* Set a background color */
+}
+
+.skills-list {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.skills-list i {
+    font-size: 3em; /* Adjust the icon size */
+    color:var(--accent-color); /* Set the color of the icons */
+    margin-right: 20px; /* Adjust spacing between icons */
+    transition: transform 0.3s ease; /* Add a smooth transition effect */
+}
+
+.skills-list i:hover {
+    transform: scale(1.1); /* Add a slight scale effect on hover */
+}
+
+
+.cards {
+
+    min-height: 100vh;
+    background-color: var(--secondary-bg);
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.card {
+    background-color: var(--secondary-bg);
+    width: 21.25em;
+    box-shadow: 0 5px 25px var(--secondary-bg);
+    border-radius: 10px;
+    padding: 25px;
+    margin: 15px;
+    transition: 0.7s ease;
+}
+
+.card:hover {
+    transform: var(--card-hover-transform);
+}
+
+.card .icon {
+    color: var(--accent-color);
+    font-size: 8em;
+    text-align: center;
+}
+.projects {
+    background-color: var(--secondary-bg);
+    min-height: 70vh;
+    color:var(--text-color);
+}
+
+.projects .content{
+    margin-top: 30px;
+    color: var(--text-color);
+}
+
+.project-card {
+    background-color:var(--secondary-bg);
+    border: 1px solid var(--accent-color);
+    min-height: 14em;
+    width: 23em;
+    overflow: hidden;
+    border-radius: 10px;
+    margin: 20px;
+    transition: 0.7s ease;
+}
+
+.project-card:hover {
+   transform: scale(1.1);
+}
+
+.project-card:hover .project-image {
+    opacity: 0.9;
+ }
+
+.project-image img{
+    width: 100%
+}
+
+.skills{
+    background-color: var(--secondary-bg);
+    min-height: 30vh;
+}
+.project-info {
+    padding: 1em;
+}
+
+.project-category {
+    font-size: 0.8em;
+    color: var(--text-color);
+}
+
+.project-title {
+    display: flex;
+    justify-content: space-between;
+    text-transform: uppercase;
+    font-weight: 800;
+    margin-top: 10px;
+}
+
+.more-details {
+    text-decoration: none;
+    color: var(--title-colorr);
+}
+
+.more-details:hover {
+    color: var(--text-color);
+}
+
+.contact .icon{
+    font-size: 4.5em;
+}
+
+.contact .info h3 {
+    color:var(--title-color);
+}
+
+.contact .info p {
+    font-size: 1.5em;
+}
+
+.footer {
+    background-color: var(--primary-bg);
+    color: var(--text-color);
+    padding: 0.8em;
+    display: flex;
+    justify-content: space-between;
+    border-top:  solid (--text-color);
+}
+
+.footer-title {
+    font-size: 1.3em;
+    font-weight: 500;
+    margin-left: 50px;
+
+}
+
+.footer-title span {
+    color:var(--title-color);
+}
+
+.footer .social-icons a{
+    font-size: 1.3em;
+    padding: 0 12px 0 0;
+    color: var(--text-color);
+}
+
+@media only screen and (max-width: 768px) {
+    .nav-items {
+        width: 90%;
+    }
+
+    .Home {
+        padding-left: 5%;
+    }
+
+    /* Add more responsive styles as needed */
+}
